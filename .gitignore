@@ -5,3 +5,4 @@ output/
 validation/
 *.zip
 runtime.local.json
+.ui-preferences.json
