@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "my_character",
+  "output": "../output/my_character",
+  "aseprite": "auto",
+  "work_size": [512, 512],
+  "sizes": [[512, 512], [64, 64], [32, 32]],
+  "resample": "lanczos4",
+  "cleanup": {"profile": "strict"},
+  "layout": {"mode": "shared_fit", "occupancy": 0.9, "anchor": [0.5, 0.95]},
+  "animations": [
+    {"name": "walk_E", "source": "../input/walk_E.aseprite", "group": "character"},
+    {"name": "walk_W", "mirror_of": "walk_E"},
+    {"name": "idle_E", "source": "../input/idle_E.aseprite", "group": "character"},
+    {"name": "idle_W", "mirror_of": "idle_E"}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "name": "portable_example",
+  "output": "../output/portable_example",
+  "aseprite": "auto",
+  "work_size": [768, 512],
+  "sizes": [[192, 128], [96, 64]],
+  "resample": "lanczos4",
+  "cleanup": {"profile": "conservative"},
+  "layout": {"mode": "shared_fit", "occupancy": 0.88, "anchor": [0.5, 0.94]},
+  "export": {
+    "aseprite": true, "png_frames": true, "previews": true,
+    "preview_sizes": [[96, 64]], "preview_scale": 4, "preview_frames": 48, "zip": true
+  },
+  "unity": {"pixels_per_unit": 64, "pivot": [0.5, 0.5]},
+  "animations": [
+    {
+      "name": "run_front",
+      "group": "creature",
+      "source": {"path": "../input/run_front.png", "frame_size": [768, 512], "fps": 16},
+      "reverse": true
+    },
+    {
+      "name": "run_right",
+      "group": "creature",
+      "source": {"path": "../input/run_right_frames", "type": "sequence", "glob": "*.png", "fps": 16},
+      "pingpong": "repeat_ends",
+      "zoom": {"start_scale": 1.0, "end_scale": 0.94, "easing": "smoothstep"}
+    },
+    {"name": "run_left", "mirror_of": "run_right"},
+    {
+      "name": "idle_edited",
+      "group": "creature",
+      "source": "../input/idle_original_high_resolution.aseprite",
+      "edited": "../input/idle_user_edited.aseprite",
+      "matching": {"allow_mirror": false, "max_error": 0.12, "min_margin": 0.002, "compare_size": 64}
+    }
+  ]
+}
